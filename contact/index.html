@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - WebTools</title>
+    <meta name="description" content="Reach out to the WebTools team. We value your feedback and suggestions." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e293b',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Component Placeholder -->
+    <div id="global-header"></div>
+
+    <main class="flex-grow pt-[100px] pb-24 px-4 sm:px-6">
+
+        <!-- App Header -->
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+            <div
+                class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 transform hover:rotate-6 transition-transform">
+                📬</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Get in Touch</h1>
+            <p class="text-slate-400 text-lg">Have a suggestion, found a bug, or just want to say hi? We'd love to hear
+                from you.</p>
+        </div>
+
+        <!-- Contact Container -->
+        <div class="max-w-xl mx-auto">
+            <div class="bg-slate-800 rounded-[24px] p-8 md:p-10 border border-slate-700/50 shadow-soft">
+                <form class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2 ml-1">Your Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                            <input type="text"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none text-white placeholder-slate-600 transition shadow-inner"
+                                placeholder="John Doe">
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2 ml-1">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <input type="email"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none text-white placeholder-slate-600 transition shadow-inner"
+                                placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-300 mb-2 ml-1">Message</label>
+                        <textarea
+                            class="w-full p-4 bg-slate-900 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none text-white placeholder-slate-600 transition shadow-inner min-h-[150px] resize-y"
+                            placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit"
+                        class="w-full btn btn-primary btn-lg flex items-center justify-center gap-2 group">
+                        Send Message
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-slate-500 mb-2">Prefer email?</p>
+                <a href="mailto:support@webtools.com"
+                    class="text-blue-400 font-bold hover:text-white transition-colors text-lg">support@webtools.com</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Component Placeholder -->
+    <div id="global-footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Simple form submission handler
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = 'Sending...';
+            btn.classList.add('opacity-75');
+
+            setTimeout(() => {
+                btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Sent Successfully`;
+                btn.classList.remove('bg-blue-600', 'hover:bg-blue-500');
+                btn.classList.add('bg-green-600', 'hover:bg-green-500');
+                showToast('Message sent! We will get back to you soon.');
+                this.reset();
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-600', 'hover:bg-green-500');
+                    btn.classList.add('bg-blue-600', 'hover:bg-blue-500');
+                    btn.classList.remove('opacity-75');
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

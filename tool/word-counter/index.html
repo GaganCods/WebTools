@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Counter - WebTools</title>
+    <meta name="description"
+        content="Free online word counter, character counter, and reading time estimator by WebTools." />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e293b',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Component Placeholder -->
+    <div id="global-header"></div>
+
+    <main class="flex-grow pt-[100px] pb-24 px-4 sm:px-6">
+
+        <!-- App Header -->
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+            <div
+                class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 transform hover:rotate-6 transition-transform">
+                📝</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Word Counter</h1>
+            <p class="text-slate-400 text-lg">Instant text analysis. Just start typing.</p>
+        </div>
+
+        <!-- App Container -->
+        <div class="tool-app-container max-w-[900px] mx-auto">
+
+            <!-- Stats Grid (Pills) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-900 p-4 rounded-[16px] border border-slate-700/50 text-center">
+                    <div class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">Words</div>
+                    <div id="word-count" class="text-3xl font-bold text-white">0</div>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-[16px] border border-slate-700/50 text-center">
+                    <div class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">Characters</div>
+                    <div id="char-count" class="text-3xl font-bold text-white">0</div>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-[16px] border border-slate-700/50 text-center">
+                    <div class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">Sentences</div>
+                    <div id="sentence-count" class="text-3xl font-bold text-white">0</div>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-[16px] border border-slate-700/50 text-center">
+                    <div class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">Paragraphs</div>
+                    <div id="paragraph-count" class="text-3xl font-bold text-white">0</div>
+                </div>
+            </div>
+
+            <!-- Text Area -->
+            <div class="relative group">
+                <textarea id="text-input"
+                    class="w-full h-80 p-6 md:p-8 bg-slate-900 border-2 border-slate-700 rounded-[20px] focus:border-blue-500 outline-none text-lg text-slate-300 placeholder-slate-600 resize-none transition-all shadow-inner leading-relaxed"
+                    placeholder="Type or paste your text here to begin analyzing..."></textarea>
+
+                <!-- Floating Clear Button -->
+                <button id="clear-btn"
+                    class="absolute top-4 right-4 bg-slate-800 text-slate-400 hover:text-red-400 hover:bg-slate-700 p-2 rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Extra Stats -->
+            <div class="mt-6 flex flex-wrap gap-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                <span class="px-4 py-2 bg-slate-900 rounded-full border border-slate-800">Reading Time: <span
+                        id="reading-time" class="text-blue-400">0 min</span></span>
+                <span class="px-4 py-2 bg-slate-900 rounded-full border border-slate-800">Speaking Time: <span
+                        id="speaking-time" class="text-blue-400">0 min</span></span>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Component Placeholder -->
+    <div id="global-footer"></div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

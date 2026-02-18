@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------- */
+/*                           PREMIUM DESIGN SYSTEM                            */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Colors - Slate Dark Theme (Premium) */
+  --bg-body: #0f172a;
+  /* Slate 900 */
+  --bg-surface: #1e293b;
+  /* Slate 800 */
+  --bg-surface-elevated: #28364d;
+  /* Slate 750 (Custom) */
+
+  --primary: #3b82f6;
+  /* Blue 500 */
+  --primary-hover: #2563eb;
+  /* Blue 600 */
+  --secondary: #64748b;
+  /* Slate 500 */
+
+  --text-main: #f8fafc;
+  /* Slate 50 */
+  --text-muted: #94a3b8;
+  /* Slate 400 */
+
+  --border-subtle: rgba(148, 163, 184, 0.1);
+  --border-highlight: rgba(148, 163, 184, 0.2);
+
+  /* Shadows (Soft & Heavy) */
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.25);
+
+  /* Layout Rules */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  /* Cards */
+  --radius-xl: 24px;
+  /* Tool Container */
+  --radius-pill: 9999px;
+  /* Buttons */
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                GLOBAL RESET                                */
+/* -------------------------------------------------------------------------- */
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.025em;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 COMPONENTS                                 */
+/* -------------------------------------------------------------------------- */
+
+/* Premium Buttons */
+/* Premium Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Primary Button (Solid Blue) */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+}
+
+/* Secondary Button (Outlined/Dark) */
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  border-color: var(--border-highlight);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Ghost Button (Transparent) */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-muted);
+  padding: 8px 16px;
+}
+
+.btn-ghost:hover {
+  background-color: var(--border-subtle);
+  color: var(--text-main);
+}
+
+/* Icon Button (Square/Circle) */
+.btn-icon {
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Sizes */
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+/* Full Width Helper */
+.btn-full {
+  width: 100%;
+}
+
+/* Tool Cards (All Tools Page) */
+.tool-grid-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-grid-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-soft), var(--shadow-glow);
+  background-color: var(--bg-surface-elevated);
+}
+
+/* Main Tool Container (The App Box) */
+.tool-app-container {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: 32px;
+  /* Desktop default */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  @apply bg-slate-900 border border-slate-700 text-white w-full transition-all duration-200 outline-none shadow-inner;
+  padding: 16px;
+  border-radius: var(--radius-md);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Modern Range Slider */
+input[type=range] {
+  @apply h-2 bg-slate-700 rounded-full appearance-none cursor-pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  @apply appearance-none w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-slate-900 transition-transform duration-200;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Modern Toggle Switch (using Checkbox) */
+.toggle-switch {
+  @apply relative inline-flex items-center cursor-pointer;
+}
+
+.toggle-switch input {
+  @apply sr-only;
+}
+
+.toggle-track {
+  @apply w-11 h-6 bg-slate-700 rounded-full peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 transition-colors duration-200;
+}
+
+.toggle-switch input:checked+.toggle-track {
+  @apply bg-blue-600;
+}
+
+.toggle-knob {
+  @apply absolute top-[2px] left-[2px] bg-white border border-gray-300 rounded-full h-5 w-5 transition-transform duration-200;
+}
+
+.toggle-switch input:checked+.toggle-track .toggle-knob {
+  @apply translate-x-full border-white;
+}
+
+/* Note: CSS-only toggle needs specific HTML structure, using simplified version in tools */
+
+/* -------------------------------------------------------------------------- */
+/*                                UTILITIES                                   */
+/* -------------------------------------------------------------------------- */
+
+.section-padding {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.container-standard {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Toast Notification (JS) */
+.toast {
+  @apply fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white px-6 py-3 rounded-full shadow-2xl border border-slate-700 flex items-center gap-3 transition-all duration-300 z-50 translate-y-20 opacity-0;
+}
+
+.toast.show {
+  @apply translate-y-0 opacity-100;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .tool-app-container {
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
+  }
+}

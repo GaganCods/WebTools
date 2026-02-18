@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - WebTools</title>
+    <meta name="description"
+        content="We are building the future of privacy-first, client-side web tools. Fast, free, and secure." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e293b',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body
+    class="font-sans antialiased flex flex-col min-h-screen bg-slate-900 text-slate-50 selection:bg-blue-500/30 selection:text-blue-200">
+
+    <!-- Component Placeholder -->
+    <div id="global-header"></div>
+
+    <main class="flex-grow pt-[120px] pb-32">
+
+        <!-- 1. Hero Section -->
+        <section class="max-w-[1100px] mx-auto px-6 sm:px-8 mb-32 text-center relative z-10">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-xs uppercase tracking-widest mb-8">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                Our Story
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tight leading-[1.1]">
+                Empowering your workflow <br class="hidden md:block">
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500">without
+                    reliable servers.</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
+                We believe essential digital tools should be fast, free, and mostly importantly—private. That's why we
+                built WebTools to run entirely in your browser.
+            </p>
+
+            <!-- Background Decor -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-3xl -z-10 pointer-events-none">
+            </div>
+        </section>
+
+        <!-- 2. Mission Grid -->
+        <section class="max-w-[1100px] mx-auto px-6 sm:px-8 mb-32">
+            <div
+                class="bg-slate-800/50 rounded-[24px] border border-slate-700/50 p-8 md:p-12 lg:p-16 backdrop-blur-sm relative overflow-hidden">
+                <!-- Glow effect -->
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none">
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 tracking-tight">The Mission</h2>
+                        <div class="prose prose-lg prose-invert text-slate-400 leading-loose">
+                            <p class="mb-6">
+                                In a world where everything is moving to the cloud, we noticed a dangerous trend: simple
+                                tasks requiring you to upload sensitive data to remote servers.
+                            </p>
+                            <p class="mb-6">
+                                We asked ourselves: <em class="text-white font-medium">"Why does a password generator
+                                    need an internet connection?"</em> or <em class="text-white font-medium">"Why upload
+                                    a 5MB image just to compress it?"</em>
+                            </p>
+                            <p>
+                                Our mission is to bring the power back to your device. By leveraging modern browser
+                                technologies (WebAssembly, Canvas API), we deliver desktop-class performance without the
+                                privacy risks.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Stack -->
+                    <div class="space-y-6">
+                        <div
+                            class="bg-slate-800 p-6 rounded-[20px] border border-slate-700/50 shadow-lg flex items-start gap-5 hover:border-blue-500/30 transition-colors group">
+                            <div
+                                class="w-12 h-12 bg-blue-500/10 rounded-[14px] flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                🛡️</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Privacy First Architecture</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">Zero data collection. Your inputs
+                                    never leave your device.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-800 p-6 rounded-[20px] border border-slate-700/50 shadow-lg flex items-start gap-5 hover:border-green-500/30 transition-colors group">
+                            <div
+                                class="w-12 h-12 bg-green-500/10 rounded-[14px] flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                ⚡</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Instant Performance</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">No server latency. Results appear
+                                    instantly as you type.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-slate-800 p-6 rounded-[20px] border border-slate-700/50 shadow-lg flex items-start gap-5 hover:border-purple-500/30 transition-colors group">
+                            <div
+                                class="w-12 h-12 bg-purple-500/10 rounded-[14px] flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                💎</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Premium Experience</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">Clean, ad-free interface designed for
+                                    focus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Why Choose Us (Grid) -->
+        <section class="max-w-[1100px] mx-auto px-6 sm:px-8 mb-32">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Why use WebTools?</h2>
+                <p class="text-lg text-slate-400 leading-relaxed">Built for developers, designers, and privacy-conscious
+                    users who value speed and security.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-slate-800 p-10 rounded-[24px] border border-slate-700/50 hover:bg-slate-750 hover:-translate-y-1 transition-all duration-300 shadow-soft group">
+                    <div
+                        class="w-16 h-16 bg-slate-900 rounded-[18px] flex items-center justify-center text-3xl mb-8 border border-slate-700/50 group-hover:border-blue-500/30 transition-colors shadow-inner">
+                        🔒</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Client-Side Only</h3>
+                    <p class="text-slate-400 leading-relaxed text-[17px]">
+                        Your data never leaves your browser. Files, passwords, and text are processed locally on your
+                        machine using JavaScript.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-slate-800 p-10 rounded-[24px] border border-slate-700/50 hover:bg-slate-750 hover:-translate-y-1 transition-all duration-300 shadow-soft group">
+                    <div
+                        class="w-16 h-16 bg-slate-900 rounded-[18px] flex items-center justify-center text-3xl mb-8 border border-slate-700/50 group-hover:border-blue-500/30 transition-colors shadow-inner">
+                        🚀</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Blazing Fast</h3>
+                    <p class="text-slate-400 leading-relaxed text-[17px]">
+                        Since there's no uploading or downloading, tools work instantly. Perfect for slow connections or
+                        working offline.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-slate-800 p-10 rounded-[24px] border border-slate-700/50 hover:bg-slate-750 hover:-translate-y-1 transition-all duration-300 shadow-soft group">
+                    <div
+                        class="w-16 h-16 bg-slate-900 rounded-[18px] flex items-center justify-center text-3xl mb-8 border border-slate-700/50 group-hover:border-blue-500/30 transition-colors shadow-inner">
+                        🎁</div>
+                    <h3 class="text-xl font-bold text-white mb-4">Forever Free</h3>
+                    <p class="text-slate-400 leading-relaxed text-[17px]">
+                        We monetize through minimal, non-intrusive partnerships, keeping the core utility tools free for
+                        everyone, forever.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CTA -->
+        <section class="max-w-[1000px] mx-auto px-6 sm:px-8 text-center pb-12">
+            <div
+                class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[32px] p-12 md:p-16 shadow-2xl relative overflow-hidden group">
+                <!-- Animated Shine -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000">
+                </div>
+
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Ready to work faster?</h2>
+                    <p class="text-blue-100/90 text-lg md:text-xl mb-10 max-w-lg mx-auto leading-relaxed">Explore our
+                        suite of free online tools and boost your productivity today.</p>
+                    <a href="../tools/"
+                        class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold py-4 px-10 rounded-full hover:bg-blue-50 hover:scale-105 active:scale-95 transition-all shadow-xl text-lg">
+                        Browse All Tools
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Component Placeholder -->
+    <div id="global-footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

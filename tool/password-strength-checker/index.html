@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Checker - WebTools</title>
+    <meta name="description"
+        content="Check how secure your password is. WebTools analyzes strength, entropy, and crack time locally." />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e293b',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Component Placeholder -->
+    <div id="global-header"></div>
+
+    <main class="flex-grow pt-[100px] pb-24 px-4 sm:px-6">
+
+        <!-- App Header -->
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+            <div
+                class="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 transform hover:rotate-6 transition-transform">
+                💪</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Strength Checker</h1>
+            <p class="text-slate-400 text-lg">Don't guess. Know exactly how secure your password is against modern
+                tracking tools.</p>
+        </div>
+
+        <!-- App Container -->
+        <div class="tool-app-container max-w-[900px] mx-auto">
+
+            <!-- Input Field -->
+            <div class="relative mb-12">
+                <input type="text" placeholder="Enter a password to analyze..."
+                    class="w-full text-2xl md:text-3xl p-6 md:p-8 bg-slate-900 border border-slate-700 rounded-[20px] focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 outline-none text-white placeholder-slate-600 transition shadow-inner font-mono text-center tracking-wide" />
+                <div
+                    class="absolute right-6 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-2 text-slate-500 text-sm font-medium bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Protected
+                </div>
+            </div>
+
+            <!-- Strength Visualization -->
+            <div class="bg-slate-900/50 p-8 md:p-10 rounded-[24px] border border-slate-700/30">
+
+                <div class="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
+                    <span class="text-slate-400 font-bold uppercase tracking-widest text-sm">Estimated Strength</span>
+                    <span class="text-3xl font-bold text-red-500 transition-colors duration-300" id="strength-text">Very
+                        Weak</span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div
+                    class="h-6 w-full bg-slate-800 rounded-full overflow-hidden shadow-inner mb-10 ring-1 ring-slate-700">
+                    <div class="h-full bg-gradient-to-r from-red-500 to-red-600 w-0 transition-all duration-700 ease-out shadow-[0_0_20px_rgba(239,68,68,0.6)] relative rounded-r-full"
+                        id="strength-bar">
+                        <div class="absolute inset-0 bg-white/10"></div>
+                    </div>
+                </div>
+
+                <!-- Criteria Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-slate-800 p-5 rounded-[16px] border border-slate-700/50 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 text-xs font-bold transition-all"
+                            id="check-length">✕</div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Length</div>
+                            <div class="text-xs text-slate-500">12+ chars recommended</div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-[16px] border border-slate-700/50 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 text-xs font-bold transition-all"
+                            id="check-variety">✕</div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Complexity</div>
+                            <div class="text-xs text-slate-500">Signs & Numbers</div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-[16px] border border-slate-700/50 flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-slate-400 text-xs font-bold transition-all"
+                            id="check-case">✕</div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Case</div>
+                            <div class="text-xs text-slate-500">Upper & Lowercase</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Info Content -->
+        <section class="max-w-3xl mx-auto mt-24 prose prose-invert prose-lg">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">How Cracking Works</h2>
+            <div class="bg-slate-800 p-8 rounded-[24px] border border-slate-700/50 shadow-lg">
+                <p class="mb-4">Hackers don't guess passwords manually. They use vast "Rainbow Tables" (lists of common
+                    passwords) and GPU clusters to test billions of combinations per second.</p>
+                <p><strong>The math is simple:</strong> The longer and more complex your password is, the exponentially
+                    more time it takes to compute. A 6-character password can be cracked instantly. A 16-character mixed
+                    password would take trillions of years.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Component Placeholder -->
+    <div id="global-footer"></div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

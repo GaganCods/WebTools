@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Compressor - WebTools</title>
+    <meta name="description"
+        content="Compress JPG, PNG, and WEBP images locally in your browser. Fast, free, and private with WebTools." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e293b',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Component Placeholder -->
+    <div id="global-header"></div>
+
+    <main class="flex-grow pt-[100px] pb-24 px-4 sm:px-6">
+
+        <!-- App Header -->
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+            <div
+                class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 transform hover:rotate-6 transition-transform">
+                📉</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Image Compressor</h1>
+            <p class="text-slate-400 text-lg">Reduce file size without losing quality. Everything happens right on your
+                device.</p>
+        </div>
+
+        <!-- App Container -->
+        <div class="tool-app-container max-w-[900px] mx-auto">
+
+            <!-- Drag & Drop Zone -->
+            <div id="drop-zone"
+                class="border-2 border-dashed border-slate-600 rounded-[24px] p-12 text-center bg-slate-900/50 hover:bg-slate-800 hover:border-blue-500 transition-all cursor-pointer group relative overflow-hidden">
+                <input type="file" id="image-input" accept="image/*"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+
+                <div class="pointer-events-none relative z-20">
+                    <div
+                        class="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg border border-slate-700">
+                        <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Drop your image here</h3>
+                    <p class="text-slate-400">or click to browse files</p>
+                    <div class="mt-6 flex justify-center gap-2">
+                        <span
+                            class="px-3 py-1 bg-slate-800 rounded-lg text-xs font-bold text-slate-500 uppercase tracking-wider border border-slate-700">JPG</span>
+                        <span
+                            class="px-3 py-1 bg-slate-800 rounded-lg text-xs font-bold text-slate-500 uppercase tracking-wider border border-slate-700">PNG</span>
+                        <span
+                            class="px-3 py-1 bg-slate-800 rounded-lg text-xs font-bold text-slate-500 uppercase tracking-wider border border-slate-700">WEBP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Section (Hidden Initially) -->
+            <div id="controls-section" class="hidden mt-8 animate-fade-in">
+                <div class="bg-slate-900 rounded-[20px] p-8 border border-slate-700/50">
+
+                    <div class="flex flex-col md:flex-row gap-8 items-center justify-between mb-8">
+                        <div class="w-full">
+                            <div class="flex justify-between mb-2">
+                                <label class="font-bold text-white">Quality Level</label>
+                                <span id="quality-val" class="text-blue-400 font-bold">80%</span>
+                            </div>
+                            <input type="range" id="quality-slider" min="1" max="100" value="80" class="w-full">
+                        </div>
+                    </div>
+
+                    <!-- Preview Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Original -->
+                        <div class="bg-slate-800 p-4 rounded-[16px] border border-slate-700">
+                            <div
+                                class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex justify-between">
+                                <span>Original</span>
+                                <span id="original-size" class="text-white">0 KB</span>
+                            </div>
+                            <div
+                                class="aspect-video bg-slate-900 rounded-lg overflow-hidden flex items-center justify-center border border-slate-700/50">
+                                <img id="original-preview" class="max-h-full max-w-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Compressed -->
+                        <div class="bg-slate-800 p-4 rounded-[16px] border border-slate-700">
+                            <div
+                                class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-3 flex justify-between">
+                                <span>Compressed</span>
+                                <span id="compressed-size" class="text-white">0 KB</span>
+                            </div>
+                            <div
+                                class="aspect-video bg-slate-900 rounded-lg overflow-hidden flex items-center justify-center border border-slate-700/50 relative">
+                                <div id="loading-spinner"
+                                    class="hidden absolute inset-0 bg-slate-900/80 flex items-center justify-center z-10">
+                                    <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                            stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <img id="compressed-preview" class="max-h-full max-w-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex justify-end">
+                        <a id="download-btn" href="#" download="compressed-image.jpg"
+                            class="btn-primary flex items-center gap-2 w-full md:w-auto justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Download Image
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Content -->
+        <section class="max-w-3xl mx-auto mt-24 prose prose-invert prose-lg">
+            <div class="bg-blue-900/20 p-6 rounded-[20px] border border-blue-500/20 flex gap-4 items-start">
+                <div class="text-2xl">⚡</div>
+                <div>
+                    <h3 class="text-blue-300 font-bold m-0 text-lg">Did you know?</h3>
+                    <p class="text-blue-200/80 m-0 mt-2">Compressing images before uploading them to your website is the
+                        single most effective way to speed up page load times.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Component Placeholder -->
+    <div id="global-footer"></div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

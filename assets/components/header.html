@@ -1,0 +1,77 @@
+<header
+    class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+            <div
+                class="w-10 h-10 bg-blue-600 rounded-[12px] flex items-center justify-center text-xl shadow-lg shadow-blue-600/20 group-hover:scale-105 transition-transform duration-300">
+                ⚡
+            </div>
+            <span class="text-2xl font-bold text-white tracking-tight">WebTools</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="/tools/"
+                class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group">
+                All Tools
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+            </a>
+            <a href="/about/"
+                class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group">
+                About
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+            </a>
+            <a href="/contact/"
+                class="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group">
+                Contact
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+            </a>
+            <a href="/tools/" class="btn btn-primary">
+                Get Started
+            </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="mobile-menu-backdrop"
+        class="fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+
+    <!-- Mobile Dropdown Panel -->
+    <div id="mobile-menu-panel"
+        class="absolute top-[80px] left-4 right-4 bg-slate-800 border border-slate-700 rounded-[20px] shadow-2xl z-50 transform origin-top scale-95 opacity-0 invisible transition-all duration-300 flex flex-col p-2 md:hidden">
+
+        <div class="flex flex-col gap-1 p-2">
+            <a href="/"
+                class="mobile-link block px-4 py-3 rounded-xl text-slate-300 font-medium hover:bg-slate-700 hover:text-white transition-colors">
+                Home
+            </a>
+            <a href="/tools/"
+                class="mobile-link block px-4 py-3 rounded-xl text-slate-300 font-medium hover:bg-slate-700 hover:text-white transition-colors">
+                All Tools
+            </a>
+            <a href="/about/"
+                class="mobile-link block px-4 py-3 rounded-xl text-slate-300 font-medium hover:bg-slate-700 hover:text-white transition-colors">
+                About
+            </a>
+            <a href="/contact/"
+                class="mobile-link block px-4 py-3 rounded-xl text-slate-300 font-medium hover:bg-slate-700 hover:text-white transition-colors">
+                Contact
+            </a>
+        </div>
+
+        <div class="p-2 border-t border-slate-700 mt-2">
+            <a href="/tools/" class="btn btn-primary btn-full justify-center">
+                Get Started
+            </a>
+        </div>
+    </div>
+</header>

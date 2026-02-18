@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Free Online Tools - WebTools</title>
+    <meta name="description"
+        content="Access our full suite of premium, privacy-focused online tools. Free forever and running locally on your device." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e293b',
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Component Placeholder -->
+    <div id="global-header"></div>
+
+    <main class="flex-grow pt-[80px]">
+
+        <!-- Premium Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 mt-8">
+            <div
+                class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[32px] p-12 md:p-20 text-center border border-slate-700/50 shadow-soft relative overflow-hidden">
+                <!-- Decorative Background Blurs -->
+                <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 relative z-10">All Free Online Tools</h1>
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto relative z-10 leading-relaxed">
+                    A collection of powerful utilities designed for developers, creators, and everyone in between.
+                    Private, fast, and free.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Tool Card 1 -->
+                <a href="../tool/password-generator/" class="tool-grid-card group flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            🔐</div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Password Generator</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Generate strong, secure passwords
+                        with custom logic. 100% client-side security.</p>
+                    <div class="mt-auto">
+                        <span
+                            class="block w-full text-center py-3 rounded-full bg-slate-700/50 text-slate-200 font-medium group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">Open
+                            Tool</span>
+                    </div>
+                </a>
+
+                <!-- Tool Card 2 -->
+                <a href="../tool/password-strength-checker/" class="tool-grid-card group flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            💪</div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Strength Checker</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Analyze the entropy and crack-time
+                        of your passwords instantly.</p>
+                    <div class="mt-auto">
+                        <span
+                            class="block w-full text-center py-3 rounded-full bg-slate-700/50 text-slate-200 font-medium group-hover:bg-green-600 group-hover:text-white transition-all shadow-sm">Open
+                            Tool</span>
+                    </div>
+                </a>
+
+                <!-- Tool Card 3 -->
+                <a href="../tool/image-compressor/" class="tool-grid-card group flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            📉</div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-600 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Image Compressor</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Compress JPG, PNG, and WEBP images
+                        locally. Save storage without uploading.</p>
+                    <div class="mt-auto">
+                        <span
+                            class="block w-full text-center py-3 rounded-full bg-slate-700/50 text-slate-200 font-medium group-hover:bg-purple-600 group-hover:text-white transition-all shadow-sm">Open
+                            Tool</span>
+                    </div>
+                </a>
+
+                <!-- Tool Card 4 -->
+                <a href="../tool/word-counter/" class="tool-grid-card group flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            📝</div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 group-hover:bg-orange-600 group-hover:text-white group-hover:border-orange-600 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Word Counter</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Real-time statistics for your text.
+                        Count words, chars, sentences, and reading time.</p>
+                    <div class="mt-auto">
+                        <span
+                            class="block w-full text-center py-3 rounded-full bg-slate-700/50 text-slate-200 font-medium group-hover:bg-orange-600 group-hover:text-white transition-all shadow-sm">Open
+                            Tool</span>
+                    </div>
+                </a>
+
+                <!-- Tool Card 5 -->
+                <a href="../tool/color-picker/" class="tool-grid-card group flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-pink-500/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            🎨</div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 group-hover:bg-pink-600 group-hover:text-white group-hover:border-pink-600 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Color Picker</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Extract colors, generate palettes,
+                        and convert between HEX, RGB, and HSL formats.</p>
+                    <div class="mt-auto">
+                        <span
+                            class="block w-full text-center py-3 rounded-full bg-slate-700/50 text-slate-200 font-medium group-hover:bg-pink-600 group-hover:text-white transition-all shadow-sm">Open
+                            Tool</span>
+                    </div>
+                </a>
+
+                <!-- Tool Card 6 -->
+                <a href="../tool/base64-encoder-decoder/" class="tool-grid-card group flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gray-500/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                            ⚙️</div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500 group-hover:bg-gray-600 group-hover:text-white group-hover:border-gray-600 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Base64 Converter</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Encode text to Base64 or decode
+                        Base64 strings safely in your browser.</p>
+                    <div class="mt-auto">
+                        <span
+                            class="block w-full btn btn-secondary btn-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all shadow-sm">Open
+                            Tool</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Component Placeholder -->
+    <div id="global-footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
